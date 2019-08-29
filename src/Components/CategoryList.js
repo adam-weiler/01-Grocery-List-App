@@ -14,6 +14,7 @@ class CategoryList extends Component {
         { value: 'produce', id: 2 },
         { value: 'dairy', id: 3 },
         { value: 'bakery', id: 4 },
+        // 
     ]
 
     state = {

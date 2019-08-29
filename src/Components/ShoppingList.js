@@ -18,7 +18,7 @@ class ShoppingList extends Component {
         const listItems = this.state.items.map(
             (item, index) => <ShoppingItem key={index} {...item} />
         )
-        console.log(listItems)
+        // console.log(listItems)
 
         return (
             <ul id="shoppingList" className="shoppinglist">

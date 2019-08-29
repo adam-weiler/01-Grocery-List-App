@@ -1,28 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
+import ItemForm from './Components/ItemForm';
 import CategoryList from './Components/CategoryList';
 import ShoppingList from './Components/ShoppingList';
 
-function App() {
-  return (
-    <main className="layout" id="app">
-      <header className="header">
-        <h1>Grocery List</h1>
-      </header>
+class App extends Component {
 
-      <form id="newItem" className="newitem" autocomplete="off">
-        <label for="itemName" className="line-label">New Item</label>
-        <div className="addnew">
-          <input type="text" name="item" id="itemName" className="form-component inpt" placeholder="What do you need?" />
-          <input type="submit" value="Add" className="form-component btn" />
-        </div>
-      </form>
+  addItem = (item) => {
+    console.log('additem')
+    this.setState(
+    //   (prevState) => ({ })
+      this.items = { category: 'meat', name: 'Steaks' }
+    )
 
-      <CategoryList />
+    console.log(this.items)
+    
+  }
 
-      <ShoppingList />
+  render() {
 
-    </main>
-  );
+    return (
+      <main className="layout" id="app">
+        <header className="header">
+          <h1>Grocery List</h1>
+        </header>
+
+        <ItemForm onSubmit={ this.addItem.bind(this) } />
+
+        <CategoryList />
+
+        <ShoppingList />
+
+      </main>
+    );
+  }
+
 }
 
 export default App;

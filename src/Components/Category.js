@@ -7,10 +7,10 @@ class Category extends Component {
         let checked = '';
 
         if (id == 0) {
-            console.log('id 0')
+            // console.log('id 0')
             checked = 'checked';
         } else {
-            console.log('id not 0')
+            // console.log('id not 0')
             checked = ''
         }
 
