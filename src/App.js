@@ -5,15 +5,15 @@ import ShoppingList from './Components/ShoppingList';
 
 class App extends Component {
 
-  addItem = (item) => {
-    console.log('additem')
+  addItem = (event) => {
+    const newItem = event;
+
     this.setState(
-    //   (prevState) => ({ })
-      this.items = { category: 'meat', name: 'Steaks' }
+      // this.items = item
     )
 
-    console.log(this.items)
-    
+    console.log('additem');
+    console.log(newItem)
   }
 
   render() {
@@ -24,7 +24,9 @@ class App extends Component {
           <h1>Grocery List</h1>
         </header>
 
-        <ItemForm onSubmit={ this.addItem.bind(this) } />
+        <ItemForm onSubmit={ this.addItem.bind(this) } ref={this.value} />
+
+
 
         <CategoryList />
 
