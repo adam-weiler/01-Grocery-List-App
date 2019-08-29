@@ -95,7 +95,7 @@ h1 {
   background-color: #eee;
 }
 .shoppinglist li.meat:before { background-color: tomato; }
-.shoppinglist li.prod:before { background-color: mediumseagreen; }
+.shoppinglist li.produce:before { background-color: mediumseagreen; }
 .shoppinglist li.bakery:before { background-color: dodgerblue; }
 .shoppinglist li.dairy:before { background-color: gold; }
 

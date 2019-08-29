@@ -2,19 +2,23 @@ import React from 'react';
 import ShoppingItem from '../Components/ShoppingItem';
 
 class ShoppingList extends React.Component {
-    // state = {
+    state = {
     //   category: this.props.category,
-    //   quantity: this.props.quantity,
+      quantity: 1,
     //   item: this.props.item
-    // }
+    }
+
+    //Increment ()
+
+    //Passes in with quantity 0.
 
     render () {
         return (
             <ul id="shoppingList" className="shoppinglist">
-                <ShoppingItem category={'meat'} quantity={3} item={'Steaks'} />
-                <ShoppingItem category={'prod'} quantity={4} item={'Apples'} />
-                <ShoppingItem category={'dairy'} quantity={1} item={'Milk (1L, 2%)'} />
-                <ShoppingItem category={'bakery'} quantity={2} item={'Baguettes'} />
+                <ShoppingItem category={'meat'} item={'Steaks'} />
+                <ShoppingItem category={'produce'} item={'Apples'} />
+                <ShoppingItem category={'dairy'} item={'Milk (1L, 2%)'} />
+                <ShoppingItem category={'bakery'} item={'Baguettes'} />
             </ul>
         )
     }    
