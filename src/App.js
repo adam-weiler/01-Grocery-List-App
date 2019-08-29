@@ -1,5 +1,5 @@
 import React from 'react';
-import GroceryItem from './Components/GroceryItem';
+import ShoppingList from './Components/ShoppingList';
 
 function App() {
   return (
@@ -29,12 +29,9 @@ function App() {
         </form>
       </section>
 
-      <ul id="shoppingList" className="shoppinglist">
-        <GroceryItem category={'meat'} quantity={3} item={'Steaks'} />
-        <GroceryItem category={'prod'} quantity={4} item={'Apples'} />
-        <GroceryItem category={'dairy'} quantity={1} item={'Milk (1L, 2%)'} />
-        <GroceryItem category={'bakery'} quantity={2} item={'Baguettes'} />
-      </ul>
+      <ShoppingList />
+
+
     </main>
   );
 }
