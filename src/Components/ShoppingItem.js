@@ -31,18 +31,16 @@ class ShoppingItem extends Component {
     }
 
     render() {
-        const { category, item } = this.props
+        const { category, name } = this.props
 
         return (
             <li className={category}>
                 <button onClick={ this.decrementQuantity }>-</button>
-                <span>{this.state.quantity} {item}</span>
+                <span>{this.state.quantity} {name}</span>
                 <button onClick={ this.incrementQuantity }>+</button>
             </li>
         ) 
     }
-
-
 }
 
 export default ShoppingItem;

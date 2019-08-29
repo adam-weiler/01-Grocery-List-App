@@ -1,18 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Category = ({}) => {
-    return (
-        <li>
-            <input type="radio" name="category" value="bakery" id="filter4" />
-            <label for="filter4">bakery</label>
-        </li>
+class Category extends Component {
 
-        // <li className={this.state.category}>
-        //   <button>-</button>
-        //   <span>{this.state.quantity} {this.state.item}</span>
-        //   <button>+</button>
-        // </li>
-    )  
+    render() {
+        const { value, id } = this.props
+        let checked = '';
+
+        if (id == 0) {
+            console.log('id 0')
+            checked = 'checked';
+        } else {
+            console.log('id not 0')
+            checked = ''
+        }
+
+        return (
+            <li>
+                <input type="radio" name="category" value={value} id={`filter${id}`} defaultChecked={checked} />
+                <label for={`filter${id}`}>{value}</label>
+            </li>
+        )
+    }
 }
 
 export default Category;

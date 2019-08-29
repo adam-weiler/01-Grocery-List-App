@@ -4,19 +4,15 @@ import ShoppingItem from '../Components/ShoppingItem';
 class ShoppingList extends Component {
 
     initialItems = [
-        { category: 'meat', item: 'Steaks' },
-        { category: 'produce', item: 'Apples' },
-        { category: 'dairy', item: 'Milk (1L, 2%)' },
-        { category: 'bakery', item: 'Baguettes' },
+        { category: 'meat', name: 'Steaks' },
+        { category: 'produce', name: 'Apples' },
+        { category: 'dairy', name: 'Milk (1L, 2%)' },
+        { category: 'bakery', name: 'Baguettes' },
     ]
 
     state = {
         items: this.initialItems
     }
-
-    //Increment ()
-
-    //Passes in with quantity 0.
 
     render () {
         const listItems = this.state.items.map(
