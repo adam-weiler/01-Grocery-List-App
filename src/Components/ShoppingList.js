@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ShoppingItem from '../Components/ShoppingItem';
 
-class ShoppingList extends React.Component {
+class ShoppingList extends Component {
+
+    initialItems = [
+        { category: 'meat', item: 'Steaks' },
+        { category: 'produce', item: 'Apples' },
+        { category: 'dairy', item: 'Milk (1L, 2%)' },
+        { category: 'bakery', item: 'Baguettes' },
+    ]
+
     state = {
-    //   category: this.props.category,
-      quantity: 1,
-    //   item: this.props.item
+        items: this.initialItems
     }
 
     //Increment ()
@@ -13,12 +19,14 @@ class ShoppingList extends React.Component {
     //Passes in with quantity 0.
 
     render () {
+        const listItems = this.state.items.map(
+            (item, index) => <ShoppingItem key={index} {...item} />
+        )
+        console.log(listItems)
+
         return (
             <ul id="shoppingList" className="shoppinglist">
-                <ShoppingItem category={'meat'} item={'Steaks'} />
-                <ShoppingItem category={'produce'} item={'Apples'} />
-                <ShoppingItem category={'dairy'} item={'Milk (1L, 2%)'} />
-                <ShoppingItem category={'bakery'} item={'Baguettes'} />
+                { listItems }
             </ul>
         )
     }    

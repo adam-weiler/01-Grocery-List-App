@@ -7,7 +7,6 @@ class ShoppingItem extends Component {
     }
 
     incrementQuantity = () => {
-        // console.log('hey')
         this.setState(
             (prevState) => (
                 {
@@ -19,9 +18,6 @@ class ShoppingItem extends Component {
     }
 
     decrementQuantity = () => {
-        // console.log('hey')
-
-
         if (this.state.quantity > 1) {
             this.setState(
                 (prevState) => (
