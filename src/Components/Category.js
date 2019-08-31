@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Category extends Component {
+const Category = ({value, id}) => {
 
-    render() {
-        const { value, id } = this.props
+    // render() {
+        // const { value, id } = this.props
         let checked = '';
 
         if (id == 0) {
@@ -20,7 +20,7 @@ class Category extends Component {
                 <label for={`filter${id}`}>{value}</label>
             </li>
         )
-    }
+    // }
 }
 
 export default Category;

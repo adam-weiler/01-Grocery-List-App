@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ItemForm from './Components/ItemForm';
 import CategoryList from './Components/CategoryList';
-import ShoppingList from './Components/ShoppingList';
+import ItemList from './Components/ItemList';
 
 class App extends Component {
 
@@ -12,12 +12,20 @@ class App extends Component {
     { value: 'dairy', id: 3 },
     { value: 'bakery', id: 4 },
     // 
-  ]
+  ];
+
+  initialItems = [
+    { category: 'meat', name: 'Steaks' },
+    { category: 'produce', name: 'Apples' },
+    { category: 'dairy', name: 'Milk (1L, 2%)' },
+    { category: 'bakery', name: 'Baguettes' },
+];
 
   // constructor(props) {
   //   super(props);
     state = {
-        categories: this.initialCategories
+        categories: this.initialCategories,
+        items: this.initialItems
     }
 
     
@@ -62,13 +70,12 @@ class App extends Component {
         </header>
 
         <ItemForm onSubmit={ this.addItem.bind(this) } ref={this.value} />
-
-
-
-        <CategoryList categories={this.state.categories}/>
         
+        <CategoryList categories={this.state.categories}/>
 
-        {/* <ShoppingList {...this.state} dataFromParent = {this.state} /> */}
+        <ItemList items={this.state.items}/>
+
+        {/* <ItemList {...this.state} dataFromParent = {this.state} /> */}
 
       </main>
     );

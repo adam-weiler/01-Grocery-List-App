@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ShoppingItem extends Component {
+class Item extends Component {
 
     state = {
         quantity: 1
@@ -13,8 +13,7 @@ class ShoppingItem extends Component {
                     quantity: prevState.quantity + 1
                 }
             )
-        )
-        // console.log(this.state.quantity)
+        );
     }
 
     decrementQuantity = () => {
@@ -25,13 +24,12 @@ class ShoppingItem extends Component {
                         quantity: prevState.quantity - 1
                     }
                 )
-            ) //Stretch Goal: If quantity = 0 then remove item from list.
-            // console.log(this.state.quantity)
+            ); //Stretch Goal: If quantity = 0 then remove item from list.
         }
     }
 
     render() {
-        const { category, name } = this.props
+        const { category, name } = this.props;
 
         return (
             <li className={category}>
@@ -39,8 +37,8 @@ class ShoppingItem extends Component {
                 <span>{this.state.quantity} {name}</span>
                 <button onClick={ this.incrementQuantity }>+</button>
             </li>
-        ) 
+        );
     }
 }
 
-export default ShoppingItem;
+export default Item;
