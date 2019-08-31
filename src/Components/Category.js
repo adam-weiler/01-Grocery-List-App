@@ -14,6 +14,8 @@ const Category = ({value, id}) => {
             checked = ''
         }
 
+        console.log('Category.js renders.');
+
         return (
             <li>
                 <input type="radio" name="category" value={value} id={`filter${id}`} defaultChecked={checked} />

@@ -15,6 +15,8 @@ const ItemForm = ({ onSubmit }) => {
         
     }
 
+    console.log('ItemForm.js renders.');
+
     return (
         <form id="newItem" className="newitem" autoComplete="off" onSubmit={handleSubmit}>
             <label for="itemName" className="line-label">New Item</label>

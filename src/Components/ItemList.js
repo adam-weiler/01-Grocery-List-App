@@ -17,11 +17,22 @@ const ItemList = ({items}) => {
     // }
 
     // render () {
-        const listItems = items.map(
-            (item, index) => <Item key={index} {...item} />
-        )
-        // console.log(listItems)
-        console.log('ItemList.js');
+        console.log(items)
+
+        // const limitItems = items.filter(function (item, index) {
+        //     return item.category === 'meat';
+        // });
+        // console.log(limitItems)
+
+        const listItems = items.filter(
+            (item, index) => item.category === 'meat'
+            ).map(
+                (item, index) => <Item key={index} {...item} />
+            )
+        console.log(listItems)
+
+        
+        console.log('ItemList.js renders');
 
         return (
             <ul id="shoppingList" className="shoppinglist">

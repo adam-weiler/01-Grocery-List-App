@@ -18,7 +18,9 @@ class App extends Component {
     { category: 'meat', name: 'Steaks' },
     { category: 'produce', name: 'Apples' },
     { category: 'dairy', name: 'Milk (1L, 2%)' },
+    { category: 'meat', name: 'Steaks' },
     { category: 'bakery', name: 'Baguettes' },
+    { category: 'meat', name: 'Steaks' },
 ];
 
   // constructor(props) {
@@ -51,8 +53,8 @@ class App extends Component {
     // )
 
     // console.log(newItem)
-    console.log(this.state.items);
-    console.log(item['name'])
+    // console.log(this.state.items);
+    // console.log(item['name'])
 
     this.setState(
       (prevState) => ({
@@ -68,7 +70,7 @@ class App extends Component {
 
   render() {
     // console.log(this.state.categories)
-    console.log('App.js');
+    console.log('App.js renders.');
     return (
       <main className="layout" id="app">
         <header className="header">
@@ -88,7 +90,6 @@ class App extends Component {
       </main>
     );
   }
-
 }
 
 export default App;
