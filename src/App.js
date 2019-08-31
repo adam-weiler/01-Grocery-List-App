@@ -68,9 +68,16 @@ class App extends Component {
 
   }
 
+
+  updateFilter = (item) => {
+    console.log('App.js - updateFilter()')
+
+  }
+
   render() {
-    // console.log(this.state.categories)
+
     console.log('App.js renders.');
+
     return (
       <main className="layout" id="app">
         <header className="header">
@@ -81,7 +88,7 @@ class App extends Component {
         
         <ItemForm onSubmit={ this.addItem } />
 
-        <CategoryList categories={this.state.categories}/>
+        <CategoryList categories={this.state.categories} onClick={ this.updateFilter }/>
 
         <ItemList items={this.state.items}/>
 

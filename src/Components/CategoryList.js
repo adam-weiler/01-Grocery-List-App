@@ -1,7 +1,7 @@
 import React from 'react';
 import Category from '../Components/Category';
 
-const CategoryList = ({categories}) => {
+const CategoryList = ({categories, onClick}) => {
         // state = {
         //   category: this.props.category,
         //   quantity: this.props.quantity,
@@ -23,16 +23,18 @@ const CategoryList = ({categories}) => {
 
     // render () {
         const categoryElements = categories.map(
-            (category, index) => <Category key= {index} {...category} />
+            (category, index) => <Category key={index} {...category} onClick={onClick} />
         )
         console.log('CategoryList.js renders.');
+        console.log(categories)
+        console.log(onClick)
 
         return (
             <section id="filterCategories">
                 <ul className="filters">
                     { categoryElements }
                 </ul>
-                <form id="newCat" className="cat-new">
+                <form id="newCat" className="cat-new" >
                     <input type="text" name="item" id="itemName" className="form-component inpt" placeholder="New Category" />
                 </form>
             </section>

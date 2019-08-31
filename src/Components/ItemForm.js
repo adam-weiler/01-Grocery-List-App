@@ -6,13 +6,15 @@ const ItemForm = ({ onSubmit }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const item = {
-            name: itemRef.current.value,
+        if (itemRef.current.value) {  // Creates new item if user input is not blank.
+            const item = {
+                name: itemRef.current.value,
+            }
+    
+            onSubmit(item);
+            document.getElementById("newItem").reset();  // Resets form.
+            // console.log(item)
         }
-
-        onSubmit(item);
-        // console.log(item)
-        
     }
 
     console.log('ItemForm.js renders.');
@@ -21,15 +23,11 @@ const ItemForm = ({ onSubmit }) => {
         <form id="newItem" className="newitem" autoComplete="off" onSubmit={handleSubmit}>
             <label for="itemName" className="line-label">New Item</label>
             <div className="addnew">
-
-                
                 <input type="text" name="item" id="itemName" className="form-component inpt" placeholder="What do you need?" ref={itemRef} />
-
-
                 <input type="submit" value="Add" className="form-component btn" />
             </div>
         </form>
-    )
+    );
 }
 
 export default ItemForm;

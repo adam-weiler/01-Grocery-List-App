@@ -24,13 +24,23 @@ const ItemList = ({items}) => {
         // });
         // console.log(limitItems)
 
-        const listItems = items.filter(
-            (item, index) => item.category === 'meat'
-            ).map(
+
+        // let restriction = 'meat';
+        let restriction = '';
+        let listItems = items;
+
+        if (restriction) {
+            listItems = listItems.filter(
+                (item, index) => item.category === 'meat'
+                )
+            console.log(listItems)
+        }
+
+
+        listItems = listItems.map(
                 (item, index) => <Item key={index} {...item} />
             )
         console.log(listItems)
-
         
         console.log('ItemList.js renders');
 
