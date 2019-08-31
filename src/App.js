@@ -5,16 +5,34 @@ import ShoppingList from './Components/ShoppingList';
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = { category: 'meat', name: 'Pizza!' }
-  }
+  initialCategories = [
+    { value: 'all', id: 0 },
+    { value: 'meat', id: 1 },
+    { value: 'produce', id: 2 },
+    { value: 'dairy', id: 3 },
+    { value: 'bakery', id: 4 },
+    // 
+  ]
 
-  state = { category: 'meat', name: 'Tacos!' }
+  // constructor(props) {
+  //   super(props);
+    state = {
+        categories: this.initialCategories
+    }
 
-  callbackFunction = (childData) => {
-    this.setState({category: 'meat', name: 'Samosas!'})
-  }
+    
+  // }
+
+  // constructor(props) {
+  //   super(props);
+  //   this.state = { category: 'meat', name: 'Pizza!' }
+  // }
+
+  // state = { category: 'meat', name: 'Tacos!' }
+
+  // callbackFunction = (childData) => {
+  //   this.setState({category: 'meat', name: 'Samosas!'})
+  // }
 
   addItem = (item) => {
     const newItem = item;
@@ -36,7 +54,7 @@ class App extends Component {
   }
 
   render() {
-
+    console.log(this.state.categories)
     return (
       <main className="layout" id="app">
         <header className="header">
@@ -47,9 +65,10 @@ class App extends Component {
 
 
 
-        <CategoryList />
+        <CategoryList categories={this.state.categories}/>
+        
 
-        <ShoppingList {...this.state} dataFromParent = {this.state} />
+        {/* <ShoppingList {...this.state} dataFromParent = {this.state} /> */}
 
       </main>
     );

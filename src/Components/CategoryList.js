@@ -1,30 +1,31 @@
 import React, { Component } from 'react';
 import Category from '../Components/Category';
 
-class CategoryList extends Component {
+const CategoryList = ({categories}) => {
+        // state = {
+        //   category: this.props.category,
+        //   quantity: this.props.quantity,
+        //   item: this.props.item
+        // }
+
+    // initialCategories = [
+    //     { value: 'all', id: 0 },
+    //     { value: 'meat', id: 1 },
+    //     { value: 'produce', id: 2 },
+    //     { value: 'dairy', id: 3 },
+    //     { value: 'bakery', id: 4 },
+    //     // 
+    // ]
+
     // state = {
-    //   category: this.props.category,
-    //   quantity: this.props.quantity,
-    //   item: this.props.item
+    //     categories: this.initialCategories
     // }
 
-    initialCategories = [
-        { value: 'all', id: 0 },
-        { value: 'meat', id: 1 },
-        { value: 'produce', id: 2 },
-        { value: 'dairy', id: 3 },
-        { value: 'bakery', id: 4 },
-        // 
-    ]
-
-    state = {
-        categories: this.initialCategories
-    }
-
-    render () {
-        const categoryElements = this.state.categories.map(
+    // render () {
+        const categoryElements = categories.map(
             (category, index) => <Category key= {index} {...category} />
         )
+        console.log(categories)
 
         return (
             <section id="filterCategories">
@@ -36,7 +37,7 @@ class CategoryList extends Component {
                 </form>
             </section>
         )
-    }    
+    // }    
 }
 
 export default CategoryList;

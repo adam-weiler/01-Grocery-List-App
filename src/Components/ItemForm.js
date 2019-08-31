@@ -14,7 +14,7 @@ const ItemForm = ({ onSubmit }) => {
     }
 
     return (
-        <form id="newItem" className="newitem" autocomplete="off" onSubmit={handleSubmit}>
+        <form id="newItem" className="newitem" autoComplete="off" onSubmit={handleSubmit}>
             <label for="itemName" className="line-label">New Item</label>
             <div className="addnew">
 
