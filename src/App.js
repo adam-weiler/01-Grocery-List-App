@@ -26,6 +26,7 @@ class App extends Component {
   // constructor(props) {
   //   super(props);
     state = {
+        filter: '',
         categories: this.initialCategories,
         items: this.initialItems
     }
@@ -45,7 +46,7 @@ class App extends Component {
   // }
 
   addItem = (item) => {
-    console.log('App.js - addItem()')
+    console.log('App.js - addItem() -', item)
     // const newItem = item;
 
     // this.setState(
@@ -69,8 +70,12 @@ class App extends Component {
   }
 
 
-  updateFilter = (item) => {
-    console.log('App.js - updateFilter()')
+  updateFilter = (newFilter) => {
+    console.log('App.js - updateFilter() -', newFilter)
+
+    this.setState({
+      filter: newFilter
+    })
 
   }
 
@@ -90,7 +95,7 @@ class App extends Component {
 
         <CategoryList categories={this.state.categories} onClick={ this.updateFilter }/>
 
-        <ItemList items={this.state.items}/>
+        <ItemList items={this.state.items} filter={this.state.filter} />
 
         {/* <ItemList {...this.state} dataFromParent = {this.state} /> */}
 

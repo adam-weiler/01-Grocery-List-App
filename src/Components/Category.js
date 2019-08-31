@@ -3,8 +3,6 @@ import React from 'react';
 const Category = ({value, id, onClick}) => {
 
     const handleClick = (event) => {  // When user clicks on Category, shows only Items in that Category.
-        console.log(event.target.value);
-
         if (event.target.value != 'all') {  // If radio button is not "All", pass along it's value.
             onClick(event.target.value);
         } else {  // Else radio button is "All", reset to empty.

@@ -1,7 +1,7 @@
 import React from 'react';
 import Item from './Item';
 
-const ItemList = ({items}) => {
+const ItemList = ({items, filter}) => {
 // console.log(items)
         // initialItems = [
         //     { category: 'meat', name: 'Steaks' },
@@ -29,9 +29,9 @@ const ItemList = ({items}) => {
         let restriction = '';
         let listItems = items;
 
-        if (restriction) {
+        if (filter) {
             listItems = listItems.filter(
-                (item, index) => item.category === 'meat'
+                (item, index) => item.category === filter
                 )
             console.log(listItems)
         }
