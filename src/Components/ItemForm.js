@@ -4,6 +4,7 @@ const ItemForm = ({ onSubmit }) => {
     const itemRef = React.createRef();
 
     const handleSubmit = (event) => {
+        // console.log('ItemForm.js - addItem() -', itemRef.current.value)
         event.preventDefault();
 
         if (itemRef.current.value) {  // Creates new item if user input is not blank.
@@ -13,11 +14,10 @@ const ItemForm = ({ onSubmit }) => {
     
             onSubmit(item);
             document.getElementById("newItem").reset();  // Resets form.
-            // console.log(item)
         }
     }
 
-    console.log('ItemForm.js renders.');
+    // console.log('ItemForm.js renders.');
 
     return (
         <form id="newItem" className="newitem" autoComplete="off" onSubmit={handleSubmit}>
