@@ -8,10 +8,12 @@ class ShoppingList extends Component {
         { category: 'produce', name: 'Apples' },
         { category: 'dairy', name: 'Milk (1L, 2%)' },
         { category: 'bakery', name: 'Baguettes' },
+        this.props,
+        this.props.dataFromParent
     ]
 
     state = {
-        items: this.initialItems
+        items: [this.props]
     }
 
     render () {

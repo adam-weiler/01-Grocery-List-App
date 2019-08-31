@@ -5,15 +5,34 @@ import ShoppingList from './Components/ShoppingList';
 
 class App extends Component {
 
-  addItem = (event) => {
-    const newItem = event;
+  constructor(props) {
+    super(props);
+    this.state = { category: 'meat', name: 'Pizza!' }
+  }
 
-    this.setState(
-      // this.items = item
-    )
+  state = { category: 'meat', name: 'Tacos!' }
+
+  callbackFunction = (childData) => {
+    this.setState({category: 'meat', name: 'Samosas!'})
+  }
+
+  addItem = (item) => {
+    const newItem = item;
+
+    // this.setState(
+    //   this.state = item
+    // )
 
     console.log('additem');
     console.log(newItem)
+
+
+    this.setState(
+      this.state = newItem
+    )
+
+    console.log(this.state)
+
   }
 
   render() {
@@ -30,7 +49,7 @@ class App extends Component {
 
         <CategoryList />
 
-        <ShoppingList />
+        <ShoppingList {...this.state} dataFromParent = {this.state} />
 
       </main>
     );
