@@ -11,6 +11,8 @@ const ItemForm = ({ onSubmit }) => {
         }
 
         onSubmit(item);
+        // console.log(item)
+        
     }
 
     return (

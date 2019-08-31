@@ -30,6 +30,7 @@ class Item extends Component {
 
     render() {
         const { category, name } = this.props;
+        console.log('Item.js');
 
         return (
             <li className={category}>

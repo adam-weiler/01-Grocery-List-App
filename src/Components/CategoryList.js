@@ -25,7 +25,7 @@ const CategoryList = ({categories}) => {
         const categoryElements = categories.map(
             (category, index) => <Category key= {index} {...category} />
         )
-        console.log(categories)
+        // console.log(categories)
 
         return (
             <section id="filterCategories">

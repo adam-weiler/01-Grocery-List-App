@@ -43,34 +43,42 @@ class App extends Component {
   // }
 
   addItem = (item) => {
-    const newItem = item;
+    console.log('App.js - addItem()')
+    // const newItem = item;
 
     // this.setState(
     //   this.state = item
     // )
 
-    console.log('additem');
-    console.log(newItem)
-
+    // console.log(newItem)
+    console.log(this.state.items);
+    console.log(item['name'])
 
     this.setState(
-      this.state = newItem
-    )
+      (prevState) => ({
+          items: [...prevState.items, item]
+          // items: [{ category: 'dairy', name: 'Milk (1L, 2%)' }]
+          // items: prevState.push({category: 'none', name:item})
+      })
+    );
 
-    console.log(this.state)
+    // console.log(this.state)
 
   }
 
   render() {
-    console.log(this.state.categories)
+    // console.log(this.state.categories)
+    console.log('App.js');
     return (
       <main className="layout" id="app">
         <header className="header">
           <h1>Grocery List</h1>
         </header>
 
-        <ItemForm onSubmit={ this.addItem.bind(this) } ref={this.value} />
+        {/* <ItemForm onSubmit={ this.addItem.bind(this) } ref={this.value} /> */}
         
+        <ItemForm onSubmit={ this.addItem } />
+
         <CategoryList categories={this.state.categories}/>
 
         <ItemList items={this.state.items}/>

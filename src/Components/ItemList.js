@@ -2,7 +2,7 @@ import React from 'react';
 import Item from './Item';
 
 const ItemList = ({items}) => {
-console.log(items)
+// console.log(items)
         // initialItems = [
         //     { category: 'meat', name: 'Steaks' },
         //     { category: 'produce', name: 'Apples' },
@@ -21,6 +21,7 @@ console.log(items)
             (item, index) => <Item key={index} {...item} />
         )
         // console.log(listItems)
+        console.log('ItemList.js');
 
         return (
             <ul id="shoppingList" className="shoppinglist">
